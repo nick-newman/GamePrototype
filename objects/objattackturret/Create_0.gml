@@ -1,8 +1,8 @@
-// Collision Info
+// Data Given
 creator = noone;
 z = 0;
 
-// Stats
+// Data Sent
 damage = 20;
 canDamage = true;
 knockback = -10;

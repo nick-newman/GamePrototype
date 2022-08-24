@@ -60,15 +60,17 @@ if (alarm[1] > 0) {
 // On Hit
 if (instance_place(x, y - z, objEnemyAttackParent) && !immunityOn) {
 	var attack = instance_place(x, y - z, objEnemyAttackParent);
-	immunityOn = true;
-	currentHealth -= attack.damage;
-	var xKnockback = lengthdir_x(attack.knockback, attack.direction - 180);
-	var yKnockback = lengthdir_y(attack.knockback, attack.direction - 180);
-	xSpeed += xKnockback;
-	ySpeed += yKnockback;
-	instance_destroy(attack);
-	alarm[1] = (room_speed * immunityTime);
-	alarm[2] = (room_speed * healthRegenCooldown);
+	if (attack.z >= z && attack.z <= zHeight) {
+		immunityOn = true;
+		currentHealth -= attack.damage;
+		var xKnockback = lengthdir_x(attack.knockback, attack.direction - 180);
+		var yKnockback = lengthdir_y(attack.knockback, attack.direction - 180);
+		xSpeed += xKnockback;
+		ySpeed += yKnockback;
+		instance_destroy(attack);
+		alarm[1] = (room_speed * immunityTime);
+		alarm[2] = (room_speed * healthRegenCooldown);
+	}
 }
 
 // Death

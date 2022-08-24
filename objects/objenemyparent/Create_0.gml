@@ -1,0 +1,2 @@
+// Physics
+event_inherited();

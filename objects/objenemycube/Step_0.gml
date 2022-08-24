@@ -5,14 +5,20 @@ event_inherited();
 if (distance_to_object(objPlayer) < 640) {
 	if (canJump && !jumping) {
 		zSpeed = jumpSpeed;
-		canJump = false;
 		jumping = true;
-		var targetDir = point_direction(x, y, objPlayer.x + objPlayer.xSpeed * 16, objPlayer.y + objPlayer.ySpeed * 16);
-		var targetLen = distance_to_point(objPlayer.x, objPlayer.y) / 32 + random_range(0.3, 0.9);
+		var targetDir = point_direction(x, y, objPlayer.x + objPlayer.xSpeed * random_range(16, 32), objPlayer.y + objPlayer.ySpeed * random_range(16, 32));
+		var targetLen = distance_to_point(objPlayer.x, objPlayer.y) / random_range(24, 40) + random_range(0.3, 0.9);
 		xSpeed = lengthdir_x(targetLen, targetDir);
 		ySpeed = lengthdir_y(targetLen, targetDir);
-		alarm[0] = (room_speed * random_range(1, 1.5));
+		alarm[0] = (room_speed * random_range(0.6, 1.2));	// Jump Cooldown Time
 	}
+}
+
+// Jump Cooldown
+if (alarm[0] < 0) {
+	canJump = true;
+} else {
+	canJump = false;
 }
 
 // Landing
@@ -26,8 +32,10 @@ if (z + zSpeed <= zFloor) {
 // On Hit
 if (instance_place(x, y - z, objPlayerAttackParent)) {
 	var attack = instance_place(x, y - z, objPlayerAttackParent);
-	currentHealth -= attack.damage;
-	instance_destroy(attack);
+	if (attack.z >= z && attack.z <= zHeight) {
+		currentHealth -= attack.damage;
+		instance_destroy(attack);
+	}
 }
 
 // Death
