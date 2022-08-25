@@ -1,0 +1,1 @@
+/// @desc Hit Flash

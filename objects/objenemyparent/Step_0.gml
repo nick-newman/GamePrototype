@@ -1,4 +1,5 @@
 // Physics
 event_inherited();
 
-// dmg number drawing
+// TODO: Dmg number drawing
+// TODO: Move On Hit here, add dmg numbering, add invulnerable check, sort out physics

@@ -16,6 +16,10 @@ yDeceleration = 1;
 xSpeedLimit = moveSpeed;
 ySpeedLimit = moveSpeed;
 
+// Interaction
+pushForce = 1;
+pushResist = 1;
+
 // Jumping
 jumpSpeed = 5;
 currentJump = 0;
@@ -30,7 +34,7 @@ immunityTime = 0.2;
 dead = false;
 
 // Respawn
-respawnTime = 2;
+respawnTime = 1;
 respawning = false;
 
 // Health
@@ -44,3 +48,6 @@ currentWeapon = 1;
 attackRate = 0;
 attacking = false;
 canAttack = true;
+
+// Hit Detection
+defaultHit = false;

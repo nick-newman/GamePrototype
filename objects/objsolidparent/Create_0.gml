@@ -10,3 +10,10 @@ zSpeed = 0;
 
 // Gravity
 gravityForce = -0.5;
+
+// Interaction
+pushForce = 1;
+pushResist = 1;
+
+// Hit Detection
+defaultHit = true;

@@ -1,6 +1,10 @@
 // Physics
 event_inherited();
 
+// Cursor
+cursor_sprite = sprCursor;
+window_set_cursor(cr_none);
+
 // Input
 var up = keyboard_check(ord("W"));
 var down = keyboard_check(ord("S"));
@@ -37,6 +41,9 @@ if !(xSpeed == 0 && ySpeed == 0) {
 	ySpeed = (ySpeed / distance) * minDistance;
 }
 
+// Interaction
+pushForce = 1;
+
 // Jumping
 if (space && currentJump < maxJump) {
 	zSpeed = jumpSpeed;
@@ -53,8 +60,10 @@ if (z + zSpeed <= zFloor) {
 // Immunity
 if (alarm[1] > 0) {
 	immunityOn = true;
+	image_alpha = 0.75;
 } else {
 	immunityOn = false;
+	image_alpha = 1;
 }
 
 // On Hit
@@ -78,6 +87,13 @@ if ((currentHealth <= 0 || z <= -512) && !dead) {
 	dead = true;
 	alarm[2] = (room_speed * healthRegenCooldown);
 	alarm[3] = (room_speed * respawnTime);
+	instance_create_depth(x, y - z, -16000, objDeathScreen);
+}
+if (dead) {
+	currentHealth = 0;
+	xSpeed = 0;
+	ySpeed = 0;
+	zSpeed = 0;
 	image_alpha = 0;
 }
 
@@ -116,6 +132,15 @@ if (attacking && canAttack) {
 	canAttack = false;
 	playerAttack();
 	alarm[0] = (room_speed * attackRate);
+}
+
+// Depth
+if (z < 0) {
+	// Always draw Player above voids (less than or equal to 0 depth)
+	// Draw Player below tiles when z < 0 (greater than 100 depth)
+	// This is problematic because both cannot be true at once
+} else {
+	depth = -100;
 }
 
 // Camera

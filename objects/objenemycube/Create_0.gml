@@ -5,6 +5,10 @@ event_inherited();
 image_index = 0;
 image_speed = 0;
 
+// Interaction
+pushForce = 10;
+pushResist = 0;
+
 // Jumping
 jumpSpeed = 8;
 canJump = true;

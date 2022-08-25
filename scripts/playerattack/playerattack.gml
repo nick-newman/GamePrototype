@@ -5,8 +5,8 @@ function playerAttack() {
 			break;
 		case 1: // Type 1
 			attackRate = 0.5;
-			var attack = instance_create_depth(x, y - z, depth, objAttackBullet);
-			attack.direction = point_direction(x, y - z, mouse_x, mouse_y - z) + irandom_range(-1, 1);
+			var attack = instance_create_depth(x, y - z - sprite_height / 4, depth, objAttackBullet);
+			attack.direction = point_direction(x, y - z - sprite_height / 4, mouse_x, mouse_y) + irandom_range(-1, 1);
 			attack.image_angle = attack.direction;
 			attack.speed = 6;
 			attack.creator = id;
@@ -14,8 +14,8 @@ function playerAttack() {
 			break;
 		case 2: // Type 2
 			attackRate = 0.25;
-			var attack = instance_create_depth(x, y - z, depth, objAttackBullet);
-			attack.direction = point_direction(x, y - z, mouse_x, mouse_y - z) + irandom_range(-16, 16);
+			var attack = instance_create_depth(x, y - z - sprite_height / 4, depth, objAttackBullet);
+			attack.direction = point_direction(x, y - z - sprite_height / 4, mouse_x, mouse_y) + irandom_range(-16, 16);
 			attack.image_angle = attack.direction;
 			attack.speed = 6;
 			attack.creator = id;
@@ -23,8 +23,8 @@ function playerAttack() {
 			break;
 		case 3: // Type 3
 			attackRate = 1;
-			var attack = instance_create_depth(x, y - z, depth, objAttackBullet);
-			attack.direction = point_direction(x, y - z, mouse_x, mouse_y - z);
+			var attack = instance_create_depth(x, y - z - sprite_height / 4, depth, objAttackBullet);
+			attack.direction = point_direction(x, y - z - sprite_height / 4, mouse_x, mouse_y);
 			attack.image_angle = attack.direction;
 			attack.speed = 9;
 			attack.creator = id;

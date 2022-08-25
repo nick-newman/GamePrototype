@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objZ_Parent",
-    "path": "objects/objZ_Parent/objZ_Parent.yy",
+    "name": "objSolidParent",
+    "path": "objects/objSolidParent/objSolidParent.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,12 +26,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "z Heights",
-    "path": "folders/Objects/z Heights.yy",
+    "name": "z Height Solids",
+    "path": "folders/Objects/z Height Solids.yy",
   },
   "resourceVersion": "1.0",
   "name": "objZ_16",

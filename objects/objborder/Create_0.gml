@@ -1,2 +1,9 @@
+// No Physics Inheritance
+
 // z Axis
-zHeight = 1024;
+z = 0;
+zHeight = z + 1024;
+
+// Interaction
+pushForce = 10;
+pushResist = 0;
