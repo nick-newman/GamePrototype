@@ -1,19 +1,23 @@
+// X/Y Pushing Mutual Exclusion
+var xPush = false;
+var yPush = false;
+
 // X Collisions
 if (instance_place(x + xSpeed, y, objSolidParent)) {
 	var tempSolid = (instance_place(x + xSpeed, y, objSolidParent));
-	if (z < tempSolid.zHeight && z >= tempSolid.z) {
+	xPush = true;
+	if (z < tempSolid.zHeight && z >= tempSolid.z && !yPush) {
 		while (!instance_place(x + sign(xSpeed), y, tempSolid)) {
 			x += sign(xSpeed);
 		}
 		if (tempSolid.pushForce < pushForce) {
-			//xSpeed /= tempSolid.pushResist;
-			xSpeed *= 0.5; // this breaks north/west collisions
-			tempSolid.xSpeed = xSpeed;
+			tempSolid.xSpeed = xSpeed / 2; //pushResist
+			xSpeed /= 2; // west coll broken unless pushing diagonally?
 		} else {
 			xSpeed = 0;
 		}
 	}
-}
+} //else xPush = false; // here or above?
 x += round(xSpeed);
 
 
@@ -21,22 +25,20 @@ x += round(xSpeed);
 // Y Collisions
 if (instance_place(x, y + ySpeed, objSolidParent)) {
 	var tempSolid = (instance_place(x, y + ySpeed, objSolidParent));
-	if (z < tempSolid.zHeight && z >= tempSolid.z) {
+	yPush = true;
+	if (z < tempSolid.zHeight && z >= tempSolid.z && !xPush) {
 		while (!instance_place(x, y + sign(ySpeed), tempSolid)) {
 			y += sign(ySpeed);
 		}
 		if (tempSolid.pushForce < pushForce ) {
-			//ySpeed /= tempSolid.pushResist
-			ySpeed *= 0.5 // this breaks north/west collisions
-			tempSolid.ySpeed = ySpeed;
+			tempSolid.ySpeed = ySpeed / 2; //pushResist
+			ySpeed /= 2; //pushResist
 		} else {
 			ySpeed = 0;
 		}
 	}
-}
+} //else yPush = false;
 y += round(ySpeed);
-
-//x += round(xSpeed); // Having this here makes pushing mutually exclusive, but causes corner bug
 
 
 
