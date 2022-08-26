@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Solid Collisions",
+    "path": "folders/Scripts/Solid Collisions.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Collisions_3D",
+  "name": "z_collision",
   "tags": [],
   "resourceType": "GMScript",
 }

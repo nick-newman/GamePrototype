@@ -8,7 +8,7 @@ if (distance_to_object(objPlayer) <= 320) {
 		var attack = instance_create_depth(x, y - z - sprite_height / 4, depth, objAttackTurret);
 		
 		// Normal
-		attack.direction = point_direction(x, y - z - sprite_height / 4, objPlayer.x, objPlayer.y - objPlayer.z - objPlayer.sprite_height / 4);
+		attack.direction = point_direction(x, y - z - sprite_height / 4, objPlayer.x, objPlayer.y - objPlayer.sprite_height / 4);
 		// Predictive
 		//attack.direction = point_direction(x, y - z - sprite_height / 4, objPlayer.x + objPlayer.xSpeed * random_range(16, 32), objPlayer.y + objPlayer.ySpeed * random_range(16, 32));
 		//Inaccurate

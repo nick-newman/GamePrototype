@@ -9,8 +9,11 @@ image_speed = 0;
 pushForce = 10;
 pushResist = 0;
 
+// Hit Detection
+defaultHit = false;
+
 // Jumping
-jumpSpeed = 8;
+jumpSpeed = 6; //8
 canJump = true;
 jumping = false;
 

@@ -1,4 +1,4 @@
-function playerAttack() {
+function player_attack() {
 	switch (currentWeapon) {
 		case 0: // No Weapon
 			attackRate = -1;

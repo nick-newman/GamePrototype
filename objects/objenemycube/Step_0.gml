@@ -1,5 +1,6 @@
 // Physics
 event_inherited();
+// crashes if touching the Player
 
 // Aggression
 if (distance_to_object(objPlayer) < 640) {
@@ -7,9 +8,10 @@ if (distance_to_object(objPlayer) < 640) {
 		zSpeed = jumpSpeed;
 		jumping = true;
 		var targetDir = point_direction(x, y, objPlayer.x + objPlayer.xSpeed * random_range(16, 32), objPlayer.y + objPlayer.ySpeed * random_range(16, 32));
-		var targetLen = distance_to_point(objPlayer.x, objPlayer.y) / random_range(24, 40) + random_range(0.3, 0.9);
-		xSpeed = lengthdir_x(targetLen, targetDir);
-		ySpeed = lengthdir_y(targetLen, targetDir);
+		//var targetLen = distance_to_point(objPlayer.x, objPlayer.y) / random_range(24, 40) + random_range(0.3, 0.9);
+		var targetLen = random_range(2, 4);
+		//xSpeed = lengthdir_x(targetLen, targetDir);
+		//ySpeed = lengthdir_y(targetLen, targetDir);
 		alarm[0] = (room_speed * random_range(0.6, 1.2));	// Jump Cooldown Time
 	}
 }
@@ -47,3 +49,5 @@ if (currentHealth <= 0 || z <= -512) {
 if (currentHealth > maxHealth) {
 	currentHealth = maxHealth;
 }
+
+depth = -1000;

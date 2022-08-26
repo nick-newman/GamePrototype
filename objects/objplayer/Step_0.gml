@@ -130,7 +130,7 @@ if (left_mouse_hold) {
 // Attacking
 if (attacking && canAttack) {
 	canAttack = false;
-	playerAttack();
+	player_attack();
 	alarm[0] = (room_speed * attackRate);
 }
 
