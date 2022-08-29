@@ -1,5 +1,5 @@
 // Shadow
-draw_sprite_ext(sprShadow, image_index, x, y - zFloor, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+//draw_sprite_ext(sprShadow, image_index, x, y - zFloor, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
 
 // Sprite

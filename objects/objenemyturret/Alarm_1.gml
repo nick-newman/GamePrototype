@@ -1,1 +1,1 @@
-/// @desc Hit Flash
+/// @desc Hit Animation

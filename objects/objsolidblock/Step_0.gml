@@ -1,8 +1,8 @@
 // Physics
-event_inherited();
+//event_inherited();
 
 // Friction Test
-if (z == zFloor) {
+//if (z == zFloor) {
 	/* BUGGY WHEN ATTEMPTING TO PUSH DIAGONALLY
 	if (xSpeed != 0) {
 		xSpeed -= sign(xSpeed);
@@ -11,6 +11,9 @@ if (z == zFloor) {
 		ySpeed -= sign(ySpeed);
 	}
 	*/
-	xSpeed = 0;
-	ySpeed = 0;
-}
+	//xSpeed = 0;
+	//ySpeed = 0;
+//}
+
+// Hit Detection
+default_hit();

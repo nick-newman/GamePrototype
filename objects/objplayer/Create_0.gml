@@ -1,6 +1,10 @@
 // Physics
 event_inherited();
 
+// z Axis
+z = 0;
+zHeight = z + 16;
+
 // Movement
 moveSpeed = 3;
 
@@ -48,6 +52,3 @@ currentWeapon = 1;
 attackRate = 0;
 attacking = false;
 canAttack = true;
-
-// Hit Detection
-defaultHit = false;

@@ -41,18 +41,15 @@ if !(xSpeed == 0 && ySpeed == 0) {
 	ySpeed = (ySpeed / distance) * minDistance;
 }
 
-// Interaction
-pushForce = 1;
-
 // Jumping
-if (space && currentJump < maxJump) {
+if (space) {// && currentJump < maxJump) {
 	zSpeed = jumpSpeed;
 	currentJump += 1;
 	jumping = true;
 }
 
 // Landing
-if (z + zSpeed <= zFloor) {
+if (grounded) {
 	currentJump = 0;
 	jumping = false;
 }
@@ -66,7 +63,7 @@ if (alarm[1] > 0) {
 	image_alpha = 1;
 }
 
-// On Hit
+// Hit Detection
 if (instance_place(x, y - z, objEnemyAttackParent) && !immunityOn) {
 	var attack = instance_place(x, y - z, objEnemyAttackParent);
 	if (attack.z >= z && attack.z <= zHeight) {
@@ -136,9 +133,7 @@ if (attacking && canAttack) {
 
 // Depth
 if (z < 0) {
-	// Always draw Player above voids (less than or equal to 0 depth)
-	// Draw Player below tiles when z < 0 (greater than 100 depth)
-	// This is problematic because both cannot be true at once
+	depth = 350;
 } else {
 	depth = -100;
 }
