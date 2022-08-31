@@ -4,6 +4,9 @@
 z = -16;
 zHeight = z + 16;
 
+// Sprite
+wallHeight = zHeight - 16;
+
 // Speed
 xSpeed = 0;
 ySpeed = 0;

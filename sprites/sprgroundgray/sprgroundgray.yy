@@ -1,5 +1,5 @@
 {
-  "bboxMode": 2,
+  "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
   "origin": 6,
@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 63,
-  "bbox_top": 32,
-  "bbox_bottom": 95,
+  "bbox_right": 15,
+  "bbox_top": 0,
+  "bbox_bottom": 15,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 64,
-  "height": 96,
+  "width": 16,
+  "height": 16,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"d80d4c3a-6774-4191-9269-562a130482c6","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d80d4c3a-6774-4191-9269-562a130482c6","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},"LayerId":{"name":"65a8ccaf-ed08-46a1-b647-c80d0e69b48f","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprZ_64F_Solid","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},"resourceVersion":"1.0","name":"d80d4c3a-6774-4191-9269-562a130482c6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"d80d4c3a-6774-4191-9269-562a130482c6","path":"sprites/sprGroundGray/sprGroundGray.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"d80d4c3a-6774-4191-9269-562a130482c6","path":"sprites/sprGroundGray/sprGroundGray.yy",},"LayerId":{"name":"65a8ccaf-ed08-46a1-b647-c80d0e69b48f","path":"sprites/sprGroundGray/sprGroundGray.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sprGroundGray","path":"sprites/sprGroundGray/sprGroundGray.yy",},"resourceVersion":"1.0","name":"d80d4c3a-6774-4191-9269-562a130482c6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sprZ_64F_Solid","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},
+    "spriteId": {"name":"sprGroundGray","path":"sprites/sprGroundGray/sprGroundGray.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"bb270e84-fb94-43e0-92dc-334963487b46","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d80d4c3a-6774-4191-9269-562a130482c6","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
+            {"id":"442d216e-7468-44ca-a454-cadb8ce4ca72","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"d80d4c3a-6774-4191-9269-562a130482c6","path":"sprites/sprGroundGray/sprGroundGray.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -55,12 +55,12 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 0,
-    "yorigin": 96,
+    "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sprZ_64F_Solid","path":"sprites/sprZ_64F_Solid/sprZ_64F_Solid.yy",},
+    "parent": {"name":"sprGroundGray","path":"sprites/sprGroundGray/sprGroundGray.yy",},
     "resourceVersion": "1.4",
-    "name": "sprZ_64F_Solid",
+    "name": "sprGroundGray",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/z Heights.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sprZ_64F_Solid",
+  "name": "sprGroundGray",
   "tags": [],
   "resourceType": "GMSprite",
 }

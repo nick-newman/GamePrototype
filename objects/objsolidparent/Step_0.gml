@@ -25,39 +25,61 @@ if (instance_place_3d(x, y + ySpeed, z, objSolidParent)) {
 }
 y += round(ySpeed);
 
+// IF USING zFLOOR, platforms of different height that are
+// connected will glitch when player is in between them
+// this requires list to determine which one is higher to use as zFloor
+// ALSO, elevators glitch on way down due to brief moment when player's z goes 1
+// higher than the platform's zHeight at the top, and Player has x/y issues when its moving up
+
 // Z Collisions
-
-
-
-
-
+if (z > zFloor) {
+	zSpeed += gravityForce;
+}
+if (z + zSpeed < zFloor) {
+	zSpeed = 0;
+	z = zFloor;
+}
 if (instance_place(x, y, objSolidParent)) {
-	var _instance = instance_place_z(x, y, z, objSolidParent); //find highest solid below player
+	//var _instance = instance_place_z(x, y, z, objSolidParent);
 	// above or below (gravity)
 	// at top (ground, move with obj)
 	// height at solid z (collide, gravity)
 	
-	if (z > _instance.zHeight) { //|| z < _instance.z
-		zSpeed += gravityForce;
-		grounded = false;
-	}
+	var _instance = instance_place(x, y, objSolidParent);
 	
-	if (z + zSpeed <= _instance.zHeight && z >= _instance.z) { //&& z >= _instance.z
-		zSpeed = _instance.zSpeed;
-	    z = _instance.zHeight;
-		x += _instance.xSpeed;
-		y += _instance.ySpeed;
-		grounded = true;
-	}
+	// if Player is below and inside obj height, set player z to be under
 	
-	//if (zHeight + zSpeed >= _instance.z && z < _instance.zHeight) {
-	//	zSpeed = gravityForce;
-	//	grounded = false;
-	//}
+	
+	//if (z < _instance.zHeight) {
+	//if (z >= _instance.zHeight) {
+	if (_instance.z <= z) {
+		zFloor = _instance.zHeight;
+		if (z == zFloor) {
+			x += _instance.xSpeed;
+			y += _instance.ySpeed;
+		}
+		//zSpeed += gravityForce;
+		//grounded = false;
+		
+		
+	}
 } else {
-	zSpeed += gravityForce;
-	grounded = false;
+	//zSpeed += gravityForce;
+	//grounded = false;
+	zFloor = -1024;
 }
+/*
+// collide with bottom zFloor test
+if (instance_place(x, y, objSolidParent)) {
+	var _instance = instance_place(x, y, objSolidParent);
+	if (_instance.zHeight > z + zSpeed && zFloor >= _instance.zHeight) {
+		if (zSpeed >= 0 && z > _instance.zHeight) {
+			z = _instance.z + _instance.zHeight;
+			zSpeed = gravityForce;
+		}
+	}
+}
+*/
 z += round(zSpeed);
 
 /*

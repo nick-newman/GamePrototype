@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprZ_64_Solid",
-    "path": "sprites/sprZ_64_Solid/sprZ_64_Solid.yy",
+    "name": "sprGroundGray",
+    "path": "sprites/sprGroundGray/sprGroundGray.yy",
   },
   "solid": false,
   "visible": true,

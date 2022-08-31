@@ -1,3 +1,7 @@
+// z Axis
+z = 0;
+zFloor = 0;
+
 // Speed
 xSpeed = 0;
 ySpeed = 0;
