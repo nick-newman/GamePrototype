@@ -31,6 +31,39 @@ y += round(ySpeed);
 // ALSO, elevators glitch on way down due to brief moment when player's z goes 1
 // higher than the platform's zHeight at the top, and Player has x/y issues when its moving up
 
+// for inst place z, handle calculations inside the func?
+// if plr z >= _inst.zHeight, apply gravity, set zFloor
+// if z == _inst.z, stop falling, move with obj
+// if plr zHeight >= _inst.z && plr zHeight < _inst.zHeight, collide
+
+// set zFloor and move when on
+if (instance_place(x, y, objSolidParent)) {
+	//var _instance = instance_place_z(x, y, z, objSolidParent); // highest obj under player
+	var _instanceArray = instance_place_z(x, y, z, objSolidParent);
+	// use [0] for top and [1] for bot, and make sure they exist first
+	if (_instanceArray[0] != noone) {
+		// bot of obj coll checks
+	}
+	if (_instanceArray[1] != noone) {
+		// top of obj coll checks, move the ones below to here
+	}
+	
+	
+	zFloor = _instance.zHeight;
+	if (z == _instance.zHeight) {
+		x += _instance.xSpeed;
+		y += _instance.ySpeed;
+		z += _instance.zSpeed;
+		//z = _instance.zHeight;	//somehow still delayed, yet zFloor tracks accurately
+	}
+} else {
+	zFloor = -1024;
+}
+// collide at bot requires inst place z to give more than the highest obj under player,
+// it would need to give the obj above and closest to player
+
+
+
 // Z Collisions
 if (z > zFloor) {
 	zSpeed += gravityForce;
@@ -39,6 +72,7 @@ if (z + zSpeed < zFloor) {
 	zSpeed = 0;
 	z = zFloor;
 }
+/*
 if (instance_place(x, y, objSolidParent)) {
 	//var _instance = instance_place_z(x, y, z, objSolidParent);
 	// above or below (gravity)
@@ -68,6 +102,7 @@ if (instance_place(x, y, objSolidParent)) {
 	//grounded = false;
 	zFloor = -1024;
 }
+*/
 /*
 // collide with bottom zFloor test
 if (instance_place(x, y, objSolidParent)) {
