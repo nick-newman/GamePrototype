@@ -1,3 +1,39 @@
+function instance_place_z(_x, _y, _z, _object) {
+	var _collisionList = get_collision_ds_list();
+	var _collisionCount = instance_place_list(_x, _y, _object, _collisionList, false);
+	var _instanceArray = [noone, noone];
+	
+	for (var i = _collisionCount - 1; i >= 0; i--) {
+		// if obj is below or at player bottom
+		if (_z >= _collisionList[| i].z) {
+			if (_instanceArray[0] != noone) {
+				// set arr0 to the higher of the two objs
+				if (_collisionList[| i].z > _instanceArray[0].z) {
+					_instanceArray[0] = _collisionList[| i];
+				}
+			} else {
+				_instanceArray[0] = _collisionList[| i];
+			}
+		} else {
+		// if obj is above player bottom
+			if (_instanceArray[1] != noone) {
+				// set arr1 to the lower of the two objs
+				if (_collisionList[| i].z < _instanceArray[1].z) {
+					_instanceArray[1] = _collisionList[| i];
+				}
+			} else {
+				_instanceArray[1] = _collisionList[| i];
+			}
+		}
+	}
+	return _instanceArray;
+}
+
+
+
+
+
+/*
 // finds the highest obj below the player and returns it
 // TODO: Needs to also return the instance right above the Player
 // struct containing 2 ids, above and below obj, return that struct here
@@ -41,6 +77,8 @@ function instance_place_z(_x, _y, _z, _object) {
 	return _instanceArray;
 	//return _instance.id;
 }
+*/
+
 
 /*
 	if (_collisionList[| i].zHeight > _instance.zHeight) {
