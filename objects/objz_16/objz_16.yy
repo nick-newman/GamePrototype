@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "z Height Solids",
-    "path": "folders/Objects/z Height Solids.yy",
+    "name": "Terrain Solids",
+    "path": "folders/Objects/Terrain Solids.yy",
   },
   "resourceVersion": "1.0",
   "name": "objZ_16",

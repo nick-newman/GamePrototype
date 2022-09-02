@@ -1,7 +1,7 @@
 // No Physics Inheritance
 
 // z Axis
-z = -16;
+z = 32;
 height = 16;
 zHeight = z + height;
 

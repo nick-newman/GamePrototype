@@ -2,10 +2,8 @@
 
 // z Axis
 z = -16;
-zHeight = z + 16;
-
-// Sprite
-wallHeight = zHeight - 16;
+height = 16;
+zHeight = z + height;
 
 // Speed
 xSpeed = 0;

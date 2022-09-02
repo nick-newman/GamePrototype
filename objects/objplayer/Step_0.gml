@@ -42,7 +42,7 @@ if !(xSpeed == 0 && ySpeed == 0) {
 }
 
 // Jumping
-if (space) {// && currentJump < maxJump) {
+if (space && currentJump < maxJump) {
 	zSpeed = jumpSpeed;
 	currentJump += 1;
 	jumping = true;

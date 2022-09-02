@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "z Heights",
-    "path": "folders/Sprites/z Heights.yy",
+    "name": "Terrain Solids",
+    "path": "folders/Sprites/Terrain Solids.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprWallGray",
