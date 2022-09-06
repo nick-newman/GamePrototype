@@ -6,13 +6,13 @@ function instance_place_z(_x, _y, _z, _object) {
 	for (var i = _collisionCount - 1; i >= 0; i--) {
 		if (_z >= _collisionList[| i].z) {
 			if (_instanceArray[0] != noone) {
-				if (_collisionList[| i].z > _instanceArray[0].z) {
+				if (_collisionList[| i].z >= _instanceArray[0].z) { // was zHeight, but this fixes elevators
 					_instanceArray[0] = _collisionList[| i];
 				}
 			} else {
 				_instanceArray[0] = _collisionList[| i];
 			}
-		} else {
+		} else { //if (_z < collisionList[| i].z) {
 			if (_instanceArray[1] != noone) {
 				if (_collisionList[| i].z < _instanceArray[1].z) {
 					_instanceArray[1] = _collisionList[| i];

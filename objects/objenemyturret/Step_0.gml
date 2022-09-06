@@ -1,11 +1,11 @@
-// Physics
-//event_inherited();
+// No Physics Inheritance
+zHeight = z + heightValue;
 
 // Aggression
 if (distance_to_object(objPlayer) <= 320) {
 	if (canAttack) {
 		canAttack = false;
-		var attack = instance_create_depth(x, y - z - sprite_height / 4, depth, objAttackTurret);
+		var attack = instance_create_depth(x, y - z - sprite_height / 4, 100, objAttackTurret);
 		// Normal
 		attack.direction = point_direction(x, y - z - sprite_height / 4, objPlayer.x, objPlayer.y - objPlayer.sprite_height / 4);
 		// Predictive

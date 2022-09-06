@@ -2,8 +2,8 @@
 
 // z Axis
 z = 0;
-height = 1024;
-zHeight = z + height;
+heightValue = 1024;
+zHeight = z + heightValue;
 
 // Speed
 xSpeed = 0;

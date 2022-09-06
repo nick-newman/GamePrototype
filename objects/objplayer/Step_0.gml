@@ -1,5 +1,7 @@
 // Physics
 event_inherited();
+zHeight = z + heightValue;
+depth = -bbox_bottom - z;
 
 // Cursor
 cursor_sprite = sprCursor;
@@ -49,7 +51,7 @@ if (space && currentJump < maxJump) {
 }
 
 // Landing
-if (grounded) {
+if (z + zSpeed <= zFloor) {
 	currentJump = 0;
 	jumping = false;
 }

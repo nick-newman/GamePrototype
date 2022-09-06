@@ -4,3 +4,6 @@ function z_collision(_z, _instance) {
 	}
 	return false;
 }
+
+
+// IF player is above or at bottom AND below top, they collide

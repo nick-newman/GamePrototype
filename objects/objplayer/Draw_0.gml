@@ -12,10 +12,9 @@ draw_set_font(fntInfo);
 //draw_sprite_ext(sprTrue, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
 draw_text(x + 135, y - z - 160, "Health: " + string(currentHealth) + " / " + string(maxHealth));
-draw_text(x + 135, y - z - 140, "xSpeed: " + string(xSpeed));
-draw_text(x + 135, y - z - 120, "ySpeed: " + string(ySpeed));
-//draw_text(x + 135, y - z - 100, "zFloor: " + string(zFloor));
-draw_text(x + 135, y - z - 100, "Ground: " + string(grounded));
-//draw_text(x + 135, y - z - 80, "Jump: " + string(currentJump));
-draw_text(x + 135, y - z - 80, "Z: " + string(z));
-//draw_text(x + 135, y - z - 60, "zSpeed: " + string(zSpeed));
+//draw_text(x + 135, y - z - 140, "xSpeed: " + string(xSpeed));
+//draw_text(x + 135, y - z - 120, "ySpeed: " + string(ySpeed));
+draw_text(x + 135, y - z - 140, "zFloor: " + string(zFloor));
+draw_text(x + 135, y - z - 120, "Jump: " + string(currentJump));
+draw_text(x + 135, y - z - 100, "Z: " + string(z));
+draw_text(x + 135, y - z - 80, "zSpeed: " + string(zSpeed));

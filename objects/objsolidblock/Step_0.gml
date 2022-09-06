@@ -1,19 +1,34 @@
 // Physics
-//event_inherited();
+event_inherited();
 
-// Friction Test
-//if (z == zFloor) {
-	/* BUGGY WHEN ATTEMPTING TO PUSH DIAGONALLY
+// Friction
+if (z == zFloor) {
+	/*
 	if (xSpeed != 0) {
-		xSpeed -= sign(xSpeed);
+		xSpeed += -sign(xSpeed);
 	}
 	if (ySpeed != 0) {
-		ySpeed -= sign(ySpeed);
+		ySpeed += -sign(ySpeed);
 	}
 	*/
-	//xSpeed = 0;
-	//ySpeed = 0;
-//}
+	/*
+	if (xSpeed > 0) {
+		xSpeed -= 1;
+	}
+	if (xSpeed < 0) {
+		xSpeed += 1;
+	}
+	if (ySpeed > 0) {
+		ySpeed -= 1;
+	}
+	if (ySpeed < 0) {
+		ySpeed += 1;
+	}
+	*/
+	xSpeed = 0;
+	ySpeed = 0;
+}
 
-// Hit Detection
-default_hit();
+if (z <= -512) {
+	instance_destroy();
+}

@@ -1,9 +1,9 @@
 // No Physics Inheritance
 
 // z Axis
-z = 0;
-height = 16;
-zHeight = z + height;
+z = -16;
+heightValue = 16;
+zHeight = z + heightValue;
 
 // Speed
 xSpeed = 0;

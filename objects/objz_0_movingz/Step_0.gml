@@ -12,7 +12,7 @@ if (goUp && alarm[1] < 0) {
 }
 if (goDown && alarm[0] < 0) {
 	zSpeed = -1;
-	if (z <= 0) {
+	if (z <= -16) {
 		zSpeed = 0;
 		goUp = true;
 		goDown = false;
@@ -20,8 +20,7 @@ if (goDown && alarm[0] < 0) {
 	}
 }
 z += round(zSpeed);
-zHeight = z + 16;
-wallHeight = zHeight - 16;
+zHeight = z + heightValue;
 
 // Hit Detection
 default_hit();

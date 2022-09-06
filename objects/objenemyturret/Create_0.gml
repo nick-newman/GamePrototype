@@ -5,6 +5,11 @@ event_inherited();
 image_index = 0;
 image_speed = 0;
 
+// z Axis
+z = 0;
+heightValue = 16;
+zHeight = z + heightValue;
+
 // Interaction
 pushForce = 10;
 pushResist = 0;

@@ -3,8 +3,8 @@ event_inherited();
 
 // z Axis
 z = 0;
-height = 16;
-zHeight = z + height;
+heightValue = 16;
+zHeight = z + heightValue;
 
 // Movement
 moveSpeed = 3;
@@ -28,7 +28,7 @@ pushResist = 1;
 // Jumping
 jumpSpeed = 5;
 currentJump = 0;
-maxJump = 1;
+maxJump = 4;
 jumping = false;
 
 // Immunity
