@@ -1,5 +1,6 @@
 function player_contact_damage() {
-	if (z_collision(z, objPlayer) && !objPlayer.immunityOn) {
+	//if (z_collision(z, objPlayer) && !objPlayer.immunityOn) {
+	if (!objPlayer.immunityOn) {
 		objPlayer.immunityOn = true;
 		objPlayer.currentHealth -= contactDamage;
 		//var xKnockback = lengthdir_x(contactKnockback, attack.direction - 180);

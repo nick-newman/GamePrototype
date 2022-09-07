@@ -8,7 +8,13 @@ if (distance_to_object(objPlayer) < 640) {
 		zSpeed = jumpSpeed;
 		jumping = true;
 		var targetDir = point_direction(x, y, objPlayer.x + objPlayer.xSpeed * random_range(16, 32), objPlayer.y + objPlayer.ySpeed * random_range(16, 32));
-		var targetLen = 3; //distance_to_point(objPlayer.x, objPlayer.y) / random_range(48, 64);// + random_range(0.3, 0.9);
+		//var targetDir = point_direction(x, y, objPlayer.x, objPlayer.y);
+		var targetLen = 0.5 + (distance_to_point(objPlayer.x, objPlayer.y) / 64); // random_range(48, 64);// + random_range(0.3, 0.9);
+		
+		// chase ai
+		// close-range attack ai
+		// wander ai
+		
 		xSpeed = lengthdir_x(targetLen, targetDir);
 		ySpeed = lengthdir_y(targetLen, targetDir);
 		alarm[0] = (room_speed * random_range(0.6, 1.2));
@@ -45,6 +51,11 @@ if (instance_place(x, y - z, objPlayerAttackParent)) {
 		alarm[1] = (room_speed * 0.2);
 		instance_destroy(attack);
 	}
+}
+
+// Attack
+if (instance_place_3d(x + xSpeed, y + ySpeed, z + zSpeed, objPlayer)) {
+	player_contact_damage();
 }
 
 // Death
